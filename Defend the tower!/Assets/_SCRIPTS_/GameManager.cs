@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public static GameManager manager;
     WaveSpawner spawner;
 
+    public GameObject GameOverPanel;
+
     void Awake()
     {
         if (manager != null)
@@ -68,6 +70,11 @@ public class GameManager : MonoBehaviour
         {
             ShopUI.SetActive(true);
         }
+    }
+
+    public void GameOver()
+    {
+        GameOverPanel.SetActive(true);
     }
 
 }

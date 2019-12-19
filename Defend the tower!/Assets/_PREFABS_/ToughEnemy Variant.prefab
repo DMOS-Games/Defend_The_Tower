@@ -97,6 +97,11 @@ PrefabInstance:
       propertyPath: Money
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5556266650131928872, guid: 0b87687e87e07804bab4e9444983f148,
+        type: 3}
+      propertyPath: StopDistance
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8888009505912046577, guid: 0b87687e87e07804bab4e9444983f148,
         type: 3}
       propertyPath: m_Name

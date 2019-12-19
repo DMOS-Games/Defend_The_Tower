@@ -25,6 +25,12 @@ public class Tower : MonoBehaviour
     public void TakeDamage(float damage)
     {
         Health -= damage;
+
+        if(Health <= 0)
+        {
+            GameManager.manager.GameOver();
+        }
+
     }
 
 }

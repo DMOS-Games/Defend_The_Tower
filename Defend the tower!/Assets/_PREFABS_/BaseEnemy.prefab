@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Vita: 100
   Speed: 1.2
-  StopDistance: 4.6
+  StopDistance: 4.5
   Damage: 12
   AttackRate: 1.2
   Money: 3
