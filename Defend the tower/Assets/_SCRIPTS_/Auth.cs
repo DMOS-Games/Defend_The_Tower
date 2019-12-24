@@ -15,14 +15,11 @@ public class Auth : MonoBehaviour
     void Start()
     {
         PlayGamesPlatform.DebugLogEnabled = true;
-        Authenticate();
+        AuthenticateUser();
     }
 
-    void Authenticate()
+    void AuthenticateUser()
     {
-
-        Camera.main.backgroundColor = Color.blue;
-
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.Activate();
