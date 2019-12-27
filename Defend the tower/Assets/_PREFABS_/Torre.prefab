@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.08
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -606,7 +606,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -976,7 +976,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 3
         scalar: 8
-        minScalar: 3
+        minScalar: 5
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -5464,14 +5464,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
-  weapons:
+  MyWeapons:
   - {fileID: 11400000, guid: 634cda80b2b279d4e8f3027048ec9e1d, type: 2}
-  allWeapons:
+  ToBuyWeapons:
   - {fileID: 11400000, guid: 7cc64819ae6f07b429044839d5613a5a, type: 2}
   - {fileID: 11400000, guid: a9537c480c6f85240988435a8990fa47, type: 2}
   Gun: {fileID: 1192299370}
   clips:
-  - {fileID: 8300000, guid: aaccbf4c83e57a041ac78a75d7e20834, type: 3}
+  - {fileID: 8300000, guid: 8eb51ac78c9cacc409578052888b6344, type: 3}
   VFX: {fileID: 1112846661}
   BulletAudioPrefab: {fileID: 3274282431151339929, guid: d1f7082970632da46892c8ef986d7ced,
     type: 3}

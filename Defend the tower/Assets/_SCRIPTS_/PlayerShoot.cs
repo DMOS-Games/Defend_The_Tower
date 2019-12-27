@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerShoot : MonoBehaviour
 {
 
     public Camera MainCamera;
 
-    public Weapon[] weapons;
-    public Weapon[] allWeapons;
+    public List<Weapon> MyWeapons = new List<Weapon>();
+    public List<Weapon> ToBuyWeapons = new List<Weapon>();
 
     Weapon CurrentWeapon;
 
@@ -24,15 +26,23 @@ public class PlayerShoot : MonoBehaviour
 
     public GameObject BulletAudioPrefab;
 
+    int idx = 0;
+
+    public static PlayerShoot instance;
+
     void Start()
     {
 
-        CurrentWeapon = weapons[0];
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
 
-        CurrentMaxAmmo = CurrentWeapon.MaxAmmo;
-        CurrentAmmo = CurrentWeapon.CurrentAmmo;
-        CurrentDamage = CurrentWeapon.Damage;
-
+        SetWeapon(0);
     }
 
     void Update()
@@ -99,8 +109,30 @@ public class PlayerShoot : MonoBehaviour
             }
         }
 
-       //VFX.Stop();
+    }
 
+
+    public void SwapWeapon()
+    {
+
+        idx++;
+
+        if(idx  >= MyWeapons.Count)
+        {
+            idx = 0;
+        }
+
+        SetWeapon(idx);
+
+    }
+
+    void SetWeapon(int i)
+    {
+        CurrentWeapon = MyWeapons[i];
+
+        CurrentMaxAmmo = CurrentWeapon.MaxAmmo;
+        CurrentAmmo = CurrentWeapon.CurrentAmmo;
+        CurrentDamage = CurrentWeapon.Damage;
     }
 
 }

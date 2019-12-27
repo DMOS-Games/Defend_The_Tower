@@ -12,7 +12,7 @@ public class Weapon : ScriptableObject
     public float Damage;
     public float FireRate;
 
-    public float cost;
+    public int cost;
 
     public bool IsUnlocked;
 

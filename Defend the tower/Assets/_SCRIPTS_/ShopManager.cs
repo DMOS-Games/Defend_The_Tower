@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Collections;
+using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
@@ -8,7 +10,23 @@ public class ShopManager : MonoBehaviour
 
     public GameObject WeaponPanel;
 
+    public List<GameObject> WeaponShops = new List<GameObject>();
+
     public Transform WeaponShop;
+
+    public static ShopManager manager;
+
+    private void Start()
+    {
+        if(manager != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            manager = this;
+        }
+    }
 
     public void WeaponsButton()
     {
@@ -30,14 +48,21 @@ public class ShopManager : MonoBehaviour
 
     void GetWeapons()
     {
-        foreach (Weapon weapon in P_S.allWeapons)
+        foreach (Weapon weapon in P_S.ToBuyWeapons)
         {
-            WeaponHolder WH = Instantiate(WeaponHolder, WeaponShop).GetComponent<WeaponHolder>();
-            WH.WeaponImage.sprite = weapon.sprite;
-            WH.WeaponName.text = weapon.name;
-            WH.WeaponDamage.fillAmount = weapon.Damage/100;
-            WH.WeaponAmmo.text = weapon.CurrentAmmo + " / " + weapon.MaxAmmo;
-            WH.WeaponCost.text = weapon.cost.ToString();
+            WeaponShops.Add(Instantiate(WeaponHolder, WeaponShop).GetComponent<WeaponHolder>().Instantiate(weapon));
+        }
+    }
+
+    public void BuyWeapon(Weapon weapon, GameObject go)
+    {
+        if(GameManager.manager.Money >= weapon.cost)
+        {
+            GameManager.manager.Money -= weapon.cost;
+            P_S.ToBuyWeapons.Remove(weapon);
+            P_S.MyWeapons.Add(weapon);
+            WeaponShops.Remove(go);
+            go.GetComponent<WeaponHolder>().Destruct();
         }
     }
 

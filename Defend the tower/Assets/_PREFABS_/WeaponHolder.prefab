@@ -714,6 +714,7 @@ MonoBehaviour:
   WeaponName: {fileID: 8313409568716522983}
   WeaponAmmo: {fileID: 5489062253395758661}
   WeaponCost: {fileID: 4598222443107830121}
+  BuyButton: {fileID: 1131211597587100384}
 --- !u!1 &8130604147056911172
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +885,7 @@ GameObject:
   - component: {fileID: 722652245192008108}
   - component: {fileID: 1131211597587100384}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
